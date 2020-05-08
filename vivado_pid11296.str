@@ -1,0 +1,157 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 11296
+License: Customer
+
+Current time: 	12/4/17 5:06:59 PM PST
+Time zone: 	Pacific Standard Time (America/Los_Angeles)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 10 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Vivado/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	D:/Vivado/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: D:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o;C:/WINDOWS/Sun/Java/bin;C:/WINDOWS/system32;C:/WINDOWS;D:/Vivado/Vivado/2017.2/bin;D:/Vivado/Vivado/2017.2/lib/win64.o;D:/Vivado/Vivado/2017.2/tps/win64/jre/bin/server;D:/Vivado/Vivado/2017.2/tps/win64/jre/bin;D:/Vivado/SDK/2017.2/bin;D:/Vivado/Vivado/2017.2/ids_lite/ISE/bin/nt64;D:/Vivado/Vivado/2017.2/ids_lite/ISE/lib/nt64;D:/Vivado/Vivado_HLS/2017.2/bin;D:/Android/platform-tools;C:/ProgramData/Oracle/Java/javapath;C:/Program Files (x86)/Razer Chroma SDK/bin;C:/Program Files/Razer Chroma SDK/bin;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common;C:/WINDOWS/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps;C:/Program Files (x86)/GtkSharp/2.12/bin;D:/Windows Kits/10/Windows Performance Toolkit/;C:/Program Files (x86)/Skype/Phone/;C:/Program Files/Git/cmd;D:/iverilog/bin;D:/iverilog/gtkwave/bin;%SystemRoot%/system32;%SystemRoot%;%SystemRoot%/System32/Wbem;%SYSTEMROOT%/System32/WindowsPowerShell/v1.0/;D:/matlab/bin;C:/Users/Liyuan Wang/AppData/Local/Microsoft/WindowsApps;D:/FPGA/modelsim_ase/win32aloem;;D:/Vivado/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;D:/Vivado/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	Liyuan_Wang
+User home directory: C:/Users/Liyuan Wang
+User working directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: D:/Vivado/Vivado
+HDI_APPROOT: D:/Vivado/Vivado/2017.2
+RDI_DATADIR: D:/Vivado/Vivado/2017.2/data
+RDI_BINDIR: D:/Vivado/Vivado/2017.2/bin
+
+User preferences location: C:/Users/Liyuan Wang/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/Liyuan Wang/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/Liyuan Wang/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	D:/Vivado/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/.Xil/Vivado-11296-Teammate
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 476 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Liyuan Wang\Desktop\Grad courses\EE 253\final_project\lab2_handout.xpr. Version: Vivado v2017.2 
+// [GUI Memory]: 53 MB (+53078kb) [00:00:08]
+// [Engine Memory]: 454 MB (+324925kb) [00:00:08]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 477 MB. GUI used memory: 35 MB. Current time: 12/4/17 5:07:01 PM PST
+// [Engine Memory]: 477 MB (+291kb) [00:00:13]
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 539 MB (+39163kb) [00:00:18]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 607 MB (+43760kb) [00:00:26]
+// [GUI Memory]: 58 MB (+2811kb) [00:00:27]
+// [Engine Memory]: 645 MB (+7267kb) [00:00:27]
+// [GUI Memory]: 65 MB (+3831kb) [00:00:28]
+// Tcl Message: open_project {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2017.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 46 MB. Current time: 12/4/17 5:07:17 PM PST
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 808.992 ; gain = 167.766 
+// Project name: lab2_handout; location: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 70 MB (+1400kb) [00:00:48]
+// Elapsed time: 110 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa:p (cg:JFrame): Launch SDK: addNotify
+selectComboBox(PAResourceItoN.NewLaunchHardwareDialog_WORKSPACE, "Choose Location...", 1); // e:JComboBox (JPanel:JComponent, aa:p)
+dismissFolderChooser();
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, aa:p)
+// 'o' command handler elapsed time: 7 seconds
+dismissDialog("Launch SDK"); // aa:p (cg:JFrame)
+// Tcl Message: launch_sdk -workspace {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.sdk} -hwspec {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.sdk/system_wrapper.hdf} 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.sdk -hwspec C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// [GUI Memory]: 77 MB (+3770kb) [00:02:30]
+// Elapsed time: 15 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa:p (cg:JFrame): Launch SDK: addNotify
+selectComboBox(PAResourceItoN.NewLaunchHardwareDialog_LOCATION_OF_HARDWARE_DESCRIPTION_FILE, "Choose Location...", 1); // e:JComboBox (JPanel:JComponent, aa:p)
+// [Engine Memory]: 683 MB (+6589kb) [00:03:06]
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 48 MB. Current time: 12/4/17 5:09:56 PM PST
+// Elapsed time: 38 seconds
+setFolderChooser("C:/Users/Liyuan/lab2_handout.sdk");
+selectComboBox(PAResourceItoN.NewLaunchHardwareDialog_WORKSPACE, "Choose Location...", 1); // e:JComboBox (JPanel:JComponent, aa:p)
+setFolderChooser("C:/Users/Liyuan/lab2_handout.sdk");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, aa:p)
+// 'o' command handler elapsed time: 49 seconds
+dismissDialog("Launch SDK"); // aa:p (cg:JFrame)
+// Tcl Message: launch_sdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// Elapsed time: 23 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+// [GUI Memory]: 82 MB (+1528kb) [00:04:15]
+// Elapsed time: 16 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa:p (cg:JFrame): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, aa:p)
+dismissDialog("Launch SDK"); // aa:p (cg:JFrame)
+// Tcl Message: launch_sdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// [GUI Memory]: 86 MB (+398kb) [00:04:54]
+// [GUI Memory]: 92 MB (+989kb) [00:09:19]
+// [GUI Memory]: 97 MB (+299kb) [00:16:16]
+// [GUI Memory]: 102 MB (+27kb) [00:31:57]
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 50 MB. Current time: 12/4/17 5:39:56 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 6:09:57 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 48 MB. Current time: 12/4/17 6:39:59 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 7:10:00 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 7:40:00 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 8:10:00 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 8:40:00 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 48 MB. Current time: 12/4/17 9:10:01 PM PST
+// HMemoryUtils.trashcanNow. Engine heap size: 683 MB. GUI used memory: 47 MB. Current time: 12/4/17 9:40:01 PM PST

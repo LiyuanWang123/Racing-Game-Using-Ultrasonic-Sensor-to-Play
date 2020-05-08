@@ -1,0 +1,428 @@
+/*****************************************************************************
+* main.c for Lab2A of ECE 153a at UCSB
+* Date of the Last Update:  October 23,2014
+*****************************************************************************/
+
+#include "qpn_port.h"                                       /* QP-nano port */
+#include "bsp.h"                             /* Board Support Package (BSP) */
+#include "lab2a.h"                               /* application interface */
+#include "lcd.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+static QEvent l_lab2aQueue[30];  
+
+QActiveCB const Q_ROM Q_ROM_VAR QF_active[] = {
+	{ (QActive *)0,            (QEvent *)0,          0                    },
+	{ (QActive *)&AO_Lab2A,    l_lab2aQueue,         Q_DIM(l_lab2aQueue)  }
+};
+
+Q_ASSERT_COMPILE(QF_MAX_ACTIVE == Q_DIM(QF_active) - 1);
+extern XGpio ssr;
+extern XGpio Gpio;
+extern XTmrCtr sys_tmr;
+extern XTmrCtr sys_tmr2;
+extern XTmrCtr sys_tmr3;
+extern int ssr_time;
+extern int ssrcount;
+extern int sflag;
+extern unsigned int btn1;
+extern unsigned int btn2;
+extern unsigned int btn3;
+extern unsigned int btn4;
+extern unsigned int check;
+extern unsigned int count;
+extern unsigned int num;
+extern unsigned int ab;
+extern int t;
+extern int t2;
+int t3;
+int ledn;
+int slc = 1;
+int old_t = 0;
+int mode = 1;
+int draw;
+int old_count;
+int old_x;
+int old_coin_y;
+int old_block_y;
+int roadColor[3] = {22, 72, 124}; //road color
+int sideColor[3] = {150, 149, 144}; //roadside color
+unsigned long int rand_next;
+
+int block_x = 130;
+int block_y;
+int coin_x = 100;
+int coin_y;
+int coin = 0;
+int score_tmp;
+int record_tmp;
+char score[4];
+int records[5];
+char record[4];
+
+unsigned short lfsr = 0xACE1u;
+ unsigned bit;
+
+// int rad()
+// {
+//   rand_next = rand_next*1103515246+12345;
+//   return((unsigned int)(rand_next/65536)%50);
+// }
+
+ void drawCoin(int x, int y){
+	 setFont(BigFont);
+	 setColorBg(roadColor[0],roadColor[1],roadColor[2]);
+	 setColor(255, 255, 0);
+	 int old_count2 = count;
+//	 while(count-old_count2<60){
+	 lcdPrint("0", x, y);
+//	 }
+//	 old_count2 = count;
+//	 while(count-old_count2<60){
+//		 lcdPrint("l", x, y);
+//	 }
+ }
+
+ void drawTreeL(int x, int y){
+	setFont(BigFont);
+	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+	setColor(244, 110, 65);
+	fillRect(x,y,x+5,y+30);
+	setColor(0, 153, 0);
+	lcdPrint("@", x-13, y-8);
+	lcdPrint("@", x-8,  y-8);
+	lcdPrint("@", x+2,  y-8);
+	lcdPrint("@", x-8, y-12);
+	lcdPrint("@", x-3, y-12);
+ }
+ void drawTreeR(int x, int y){
+	setFont(BigFont);
+	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+	setColor(244, 110, 65);
+	fillRect(x,y,x+25,y+5);
+	setColor(0, 153, 0);
+	lcdPrint("@", x+21, y-13);
+	lcdPrint("@", x+21, y-8);
+	lcdPrint("@", x+21, y+2);
+	lcdPrint("@", x+26, y-8);
+	lcdPrint("@", x+26, y-3);
+ }
+ void cleanTreeL(int x, int y){ //still on test Issue: decrease refresh rate significantly
+ 	setFont(BigFont);
+ 	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+ 	setColor(sideColor[0], sideColor[1], sideColor[2]);
+ 	fillRect(x,y,x+30,y+5);
+ 	lcdPrint("@", x-8, y-13);
+ 	lcdPrint("@", x-8, y-8);
+ 	lcdPrint("@", x-8, y+2);
+ 	lcdPrint("@", x-12, y-8);
+ 	lcdPrint("@", x-12, y-3);
+  }
+  void cleanTreeR(int x, int y){ //still on test same issue
+ 	setFont(BigFont);
+ 	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+ 	setColor(sideColor[0], sideColor[1], sideColor[2]);
+ 	fillRect(x,y,x+25,y+5);
+ 	lcdPrint("@", x+21, y-13);
+ 	lcdPrint("@", x+21, y-8);
+ 	lcdPrint("@", x+21, y+2);
+ 	lcdPrint("@", x+26, y-8);
+ 	lcdPrint("@", x+26, y-3);
+  }
+ void drawRoad(){
+	 setColor(roadColor[0],roadColor[1],roadColor[2]);
+	fillRect(0,0,240,320);
+	setColor(sideColor[0], sideColor[1], sideColor[2]);
+	fillRect(0,0,45,320);
+	setColor(sideColor[0], sideColor[1], sideColor[2]);
+	fillRect(195,0,240,320);
+ }
+
+ void startPage(){
+	 setColor(roadColor[0],roadColor[1],roadColor[2]);
+	 fillRect(0,0,240,320);
+	 setColor(255, 255, 153);
+	 fillRect(38,148,202,166);
+	 fillRect(38,198,202,216);
+	 setColor(255, 0, 0);
+	 setColorBg(253, 202, 62);
+	 setFont(BigFont);
+	 lcdPrint("  START  ", 50, 150);
+	 lcdPrint("  RECORD ", 48, 200);
+ }
+
+ void drawBtn1() {
+	 setColor(255, 255, 153);
+	fillRect(38,198,40,216);
+	fillRect(199,198,202,216);
+	fillRect(38,198,202,200);
+	fillRect(38,215,202,216);
+
+	setColor(255, 0, 127);
+	fillRect(38,148,40,166);
+	fillRect(199,148,202,166);
+	fillRect(38,148,202,150);
+	fillRect(38,165,202,166);
+ }
+
+ void drawBtn2(){
+	 setColor(255, 0, 127);
+	fillRect(38,198,40,216);
+	fillRect(199,198,202,216);
+	fillRect(38,198,202,200);
+	fillRect(38,215,202,216);
+
+	setColor(255, 255, 153);
+	fillRect(38,148,40,166);
+	fillRect(199,148,202,166);
+	fillRect(38,148,202,150);
+	fillRect(38,165,202,166);
+ }
+
+void waitForStart() {
+	btn1 = check % 2;
+	btn2 = check % 4 / 2;
+	btn3 = check % 8 / 4;
+	btn4 = check % 16 / 8;
+
+	setColor(0, 255, 0);
+	setColorBg(255, 0, 0);
+	setFont(BigFont);
+	if(btn2 == 1){
+		btn_disable();
+		if(slc<2){
+		slc++;
+		}
+		count = 0;
+		while(count<500){}
+		btn_enable();
+	}else if (btn3 == 1) {
+		btn_disable();
+		if(slc>1){
+		slc--;
+		}
+		count = 0;
+		while(count<500){}
+		btn_enable();
+	}
+	if(slc == 1){
+		drawBtn1();
+
+	}else if(slc == 2){
+		drawBtn2();
+	}
+	if(btn1 == 1 && slc == 1){
+		mode = 2;
+	}
+	if(btn1 == 1 && slc == 2){
+			mode = 4;
+		}
+}
+
+void returnToStart(){
+	//return to start page
+	btn4 = check % 16 / 8;
+	if(btn4 == 1){
+		mode = 1;
+	}
+}
+void drawBlock(int x, int y) {
+	setColor(255, 0, 255);
+	fillRect(x,y, x + 10, y+10);
+}
+
+void drawGame(int x) {
+	setColor(255, 0, 0);
+	fillRect(x,290,x+10,300);
+	drawCoin(coin_x,coin_y);
+	drawBlock(block_x,block_y);
+	setFont(SmallFont);
+	setColor(roadColor[0],roadColor[1],roadColor[2]);
+	score_tmp = coin;
+	score[0] = score_tmp / 100 + 48;
+	score_tmp -= (score[0] - 48) * 100;
+	score[1] = coin / 10 + 48;
+	score_tmp -= (score[1] - 48) * 10;
+	score[2] = score_tmp + 48;
+	score[3] = '\0';
+	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+	lcdPrint(score, 20, 20);
+}
+
+void drawrecordpage(){
+		setFont(BigFont);
+		setColor(roadColor[0],roadColor[1],roadColor[2]);
+		fillRect(0,0,240,320);
+		setColor(255, 226, 7);
+		lcdPrint("Gold",40,100);
+		setColor(232, 230, 220);
+		lcdPrint("Silver",40,120);
+		setColor(219, 114, 76);
+		lcdPrint("Bronze",40,140);
+		setColor(76, 219, 197);
+		lcdPrint("4. ",40,160);
+		setColor(76, 219, 197);
+		lcdPrint("5. ",40,180);
+}
+void drawrecord(){
+	setColor(255,255,0);
+	setColorBg(sideColor[0], sideColor[1], sideColor[2]);
+	for(int i=0; i<5; i++){
+		record_tmp = records[i];
+		record[0] = record_tmp / 100 + 48;
+		record_tmp -= (record[0] - 48) * 100;
+		record[1] = coin / 10 + 48;
+		record_tmp -= (record[1] - 48) * 10;
+		record[2] = record_tmp + 48;
+		record[3] = '\0';
+		lcdPrint(record, 180, 100+20*i);
+	}
+	returnToStart();
+}
+void updateCointPosition(int x){
+	coin_y = coin_y+5;
+	if(coin_y>280&&coin_y<310){
+		if(x-coin_x<10&&x-coin_x>-10){
+			coin++;
+			for(int i=0; i<5; i++){
+				if(coin>records[i]){
+					records[i]= coin;
+					break;
+				}
+			}
+			coin_y = 0;
+			//coin_x =abs((t3)%50)+abs((t+t2)%50)+60;
+			coin_x = 150;//test
+		}
+	}
+	if(coin_y>310){
+		coin_y = 0;
+		//coin_x =abs((t3)%50)+abs((t+t2)%50)+60;
+		coin_x = 150;//test
+
+	}
+}
+
+void updateblockPosition(int x){
+	block_y = block_y+5;
+		if(block_y>280&&block_y<310){
+			if(x-block_x<10&&x-block_x>-10){
+				block_y = 0;
+				//mode = 3;
+				//coin_x =abs((t3)%50)+abs((t+t2)%50)+60;
+				block_x = 150;//test
+			}
+		}
+		if(block_y>310){
+			block_y = 0;
+			//coin_x =abs((t3)%50)+abs((t+t2)%50)+60;
+			block_x = 150;//test
+		}
+}
+void cleanStuff(int x) {
+	//cleanTreeL(15,old_coin_y+60);
+	//cleanTreeR(195,old_coin_y+120);
+	old_block_y = block_y;
+	setColor(roadColor[0],roadColor[1],roadColor[2]);
+	fillRect(block_x,old_block_y, block_x+10, old_block_y+10);
+
+
+	old_x=x;
+	old_coin_y = coin_y;
+
+	fillRect(old_x,290,old_x+10,300);
+	fillRect(coin_x,old_coin_y,coin_x+20,old_coin_y+20);
+
+}
+
+void playing(int x) {
+				drawTreeL(15,60);
+				//drawTreeR(195,200);
+
+				while(mode == 2){
+
+					//drawTreeL(15,coin_y+60);
+					//drawTreeR(195,coin_y+120);
+					t3 = XTmrCtr_GetValue(&sys_tmr3, 1);
+					returnToStart(); //if user wants to return to start page, press 4
+					old_count = count;
+					drawGame(x);
+					//while(count-old_count<100){
+						returnToStart();
+					//}
+
+					cleanStuff(x);
+					x=x+num; //control by rotary encoder
+					//xil_printf("num = %d\n", num);
+					//x=x+(int)((t2-t)/5000); //control by sensors
+					updateblockPosition(x);
+					updateCointPosition(x);
+					if(x<45 || x>185){
+						mode = 3;
+					}
+				}
+}
+
+void gameOver() {
+	setColorBg(0, 153, 0);
+	setColor(253, 0, 0);
+	setFont(SmallFont);
+	lcdPrint("press 4 to restart", 40, 100);
+	lcdPrint("press 1 to go to menu", 40, 120);
+	setFont(BigFont);
+	lcdPrint("Game Over", 40, 20);
+	coin_x = 100;
+	coin_y = 0;
+	coin = 0;
+	score_tmp = 0;
+	score[4] = 0;
+	num = 0;
+}
+
+int main(void) {
+	Lab2A_ctor(); // inside of lab2a.c
+	xil_printf("BSP start\n");
+	BSP_init(); // inside of bsp.c, starts out empty!
+	xil_printf("BSP end\n");
+	QF_onStartup();
+	ab = 3;
+	XTmrCtr_Start(&sys_tmr3, 1);
+	while(1) {
+
+		if(mode == 1){
+			startPage();
+			while(mode == 1){
+				waitForStart();
+			}
+		}else if(mode == 2){
+			drawRoad();
+			int x = 150; //initial player position
+			playing(x);
+
+		}else if(mode == 3){
+			gameOver();
+			while (mode == 3){
+				btn1 = check % 2;
+				btn4 = check % 16 / 8;
+				if(btn4 == 1){
+					mode = 1;
+				}
+				if(btn1 == 1){
+					mode = 2;
+				}
+			}
+		}else if(mode == 4){
+			drawrecordpage();
+			while(mode == 4){
+				drawrecord();
+			}
+
+		}
+
+
+	}
+
+	return 0;
+}

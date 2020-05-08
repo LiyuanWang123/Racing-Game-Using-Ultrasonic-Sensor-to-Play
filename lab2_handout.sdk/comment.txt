@@ -1,0 +1,3 @@
+setColor(sideColor[0], sideColor[1], sideColor[2]);
+	fillRect(3,old_coin_y+60-13,50,old_coin_y+60+5);
+	fillRect(195,old_coin_y+120-13,221,old_coin_y+120+5);

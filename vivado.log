@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Jan  9 19:20:02 2018
+# Process ID: 9036
+# Current directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8588 C:\Users\Liyuan Wang\Desktop\Grad courses\EE 253\final_project\lab2_handout.xpr
+# Log file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/vivado.log
+# Journal file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 812.844 ; gain = 167.992
+update_compile_order -fileset sources_1
+launch_sdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Liyuan/lab2_handout.sdk -hwspec C:/Users/Liyuan/lab2_handout.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  9 20:03:52 2018...

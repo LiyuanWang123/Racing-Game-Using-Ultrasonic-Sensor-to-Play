@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# updatemem v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# 
+# Start of session at: Fri Dec 15 14:12:49 2017
+# Process ID: 5232
+# Current directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+# Command line: updatemem.exe -mode batch -source D:/Vivado/SDK/2017.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/system_wrapper.mmi -data D:/Vivado/SDK/2017.2/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc system_i/microblaze_0 -bit C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/system_wrapper.bit -out C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/download.bit -force
+# Log file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/updatemem.log
+# Journal file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project\updatemem.jou
+#-----------------------------------------------------------
+source D:/Vivado/SDK/2017.2/scripts/updatemem/main.tcl -notrace
+ Loading bitfile C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/system_wrapper.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 517.129 ; gain = 461.543
+INFO: [Common 17-206] Exiting updatemem at Fri Dec 15 14:12:59 2017...

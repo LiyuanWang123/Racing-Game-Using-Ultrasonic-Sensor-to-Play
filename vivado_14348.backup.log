@@ -1,0 +1,72 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec 12 13:40:56 2017
+# Process ID: 14348
+# Current directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent484 C:\Users\Liyuan Wang\Desktop\Grad courses\EE 253\final_project\lab2_handout.xpr
+# Log file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/vivado.log
+# Journal file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 794.254 ; gain = 154.715
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.srcs/sources_1/bd/system/system.bd}
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:mig_7series:4.0 - mig_7series_0
+Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - twist
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - push
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - spi_dc
+Adding cell -- xilinx.com:ip:clk_wiz:5.4 - clk_wiz_0
+Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - spi
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - sensor
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - sensor2
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_1
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.3 - lmb_bram
+Successfully read diagram <system> from BD file <C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 908.402 ; gain = 94.402
+startgroup
+set_property location {2254 1056} [get_bd_ports sensor2]
+set_property location {2254 906} [get_bd_ports push]
+set_property location {2254 1486} [get_bd_ports sck_o]
+set_property location {2254 1116} [get_bd_ports spi_dc]
+set_property location {2254 1026} [get_bd_ports sensor]
+set_property location {2254 1366} [get_bd_ports io0_o]
+set_property location {2254 736} [get_bd_ports twist]
+set_property location {2254 596} [get_bd_ports led]
+set_property location {2254 1546} [get_bd_ports ss_o]
+set_property location {2254 456} [get_bd_ports btn]
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'set_property location {2254 456} [get_bd_ports btn]'
+INFO: [Common 17-17] undo 'set_property location {2254 1546} [get_bd_ports ss_o]'
+INFO: [Common 17-17] undo 'set_property location {2254 596} [get_bd_ports led]'
+INFO: [Common 17-17] undo 'set_property location {2254 736} [get_bd_ports twist]'
+INFO: [Common 17-17] undo 'set_property location {2254 1366} [get_bd_ports io0_o]'
+INFO: [Common 17-17] undo 'set_property location {2254 1026} [get_bd_ports sensor]'
+INFO: [Common 17-17] undo 'set_property location {2254 1116} [get_bd_ports spi_dc]'
+INFO: [Common 17-17] undo 'set_property location {2254 1486} [get_bd_ports sck_o]'
+INFO: [Common 17-17] undo 'set_property location {2254 906} [get_bd_ports push]'
+INFO: [Common 17-17] undo 'set_property location {2254 1056} [get_bd_ports sensor2]'
+INFO: [Common 17-17] undo 'startgroup'

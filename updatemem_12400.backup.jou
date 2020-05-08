@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# updatemem v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# 
+# Start of session at: Fri Dec 15 14:36:19 2017
+# Process ID: 12400
+# Current directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+# Command line: updatemem.exe -mode batch -source D:/Vivado/SDK/2017.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/system_wrapper.mmi -data D:/Vivado/SDK/2017.2/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc system_i/microblaze_0 -bit C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/system_wrapper.bit -out C:/Users/Liyuan/lab2_handout.sdk/system_wrapper_hw_platform_0/download.bit -force
+# Log file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/updatemem.log
+# Journal file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project\updatemem.jou
+#-----------------------------------------------------------
+source D:/Vivado/SDK/2017.2/scripts/updatemem/main.tcl -notrace

@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec 12 13:40:56 2017
+# Process ID: 14348
+# Current directory: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent484 C:\Users\Liyuan Wang\Desktop\Grad courses\EE 253\final_project\lab2_handout.xpr
+# Log file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/vivado.log
+# Journal file: C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.xpr}
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/Liyuan Wang/Desktop/Grad courses/EE 253/final_project/lab2_handout.srcs/sources_1/bd/system/system.bd}
+startgroup
+set_property location {2254 1056} [get_bd_ports sensor2]
+set_property location {2254 906} [get_bd_ports push]
+set_property location {2254 1486} [get_bd_ports sck_o]
+set_property location {2254 1116} [get_bd_ports spi_dc]
+set_property location {2254 1026} [get_bd_ports sensor]
+set_property location {2254 1366} [get_bd_ports io0_o]
+set_property location {2254 736} [get_bd_ports twist]
+set_property location {2254 596} [get_bd_ports led]
+set_property location {2254 1546} [get_bd_ports ss_o]
+set_property location {2254 456} [get_bd_ports btn]
+endgroup
+undo
